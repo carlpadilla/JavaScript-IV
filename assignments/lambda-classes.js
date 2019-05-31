@@ -24,10 +24,13 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student} receives a perfect score on ${subject}`);
   }
-  randomGrade(student) {
+  randomGrade() {
     let grade = Math.floor(Math.random() * 99);
-    console.log(`${student} score ${grade} `);
-    return grade;
+    if (this.grade > 50) {
+      console.log((grade += Math.floor(Math.random() * 99)));
+    } else {
+      console.log((grade -= Math.floor(Math.random() * 99)));
+    }
   } // Still working on this solution!
 }
 
@@ -95,7 +98,7 @@ const carl = new Student({
   previousBackground: 'Sys Admin',
   className: 'Webpt7',
   favSubjects: ['HTML', 'CSS', 'JavaScript'],
-  grade: 80
+  grade: 78
 });
 
 const jacob = new ProjectManagers({
@@ -120,4 +123,4 @@ console.log(jacob.debugsCode('Carl', 'JS'));
 
 // Stretch Goal testing
 console.log(john.randomGrade('Carl'));
-console.log(carl.graduate(80));
+console.log(carl.graduate());
