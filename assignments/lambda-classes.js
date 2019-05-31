@@ -54,7 +54,7 @@ class ProjectManagers extends Instructor {
     console.log(`${name} announces to ${channel}, @channel standy times!​​​​​`);
   }
   debugsCode(student, subject) {
-    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+    console.log(`${this.name} debugs ${student}'s code on ${subject}`);
   }
 }
 
@@ -75,17 +75,31 @@ const john = new Instructor({
   catchPhrase: "Don't forget the homies"
 });
 
-const jacob = new Student({
+const carl = new Student({
+  name: 'Carl',
+  age: 33,
+  location: 'Philly',
+  previousBackground: 'Sys Admin',
+  className: 'Webpt7',
+  favSubjects: ['HTML', 'CSS', 'JavaScript']
+});
+
+const jacob = new ProjectManagers({
   name: 'Jacob',
   age: 25,
-  location: 'West coast',
-  previousBackground: 'something',
-  className: 'Web1',
-  favSubjects: ['HTML', 'CSS', 'JavaScript']
+  location: 'Westcoast',
+  specialty: 'React',
+  favLanguage: 'JavaScript',
+  catchPhrase: "That's rad!",
+  favInstructor: 'Josh'
 });
 
 //logging to test output
 console.log(john.demo('CSS'));
 console.log(john.grade('Timmy', 'CSS'));
-console.log(jacob);
-console.log(jacob.listsSubjects());
+console.log(carl);
+console.log(carl.listsSubjects());
+console.log(carl.PRAssignment('Carl', 'JavaScript IV'));
+console.log(carl.sprintChallenge('Carl', 'JavaScript'));
+console.log(jacob.ProjectManagers('Jacob', 'Webpt7'));
+console.log(jacob.debugsCode('Carl', 'JS'));
