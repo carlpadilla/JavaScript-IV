@@ -24,6 +24,11 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student} receives a perfect score on ${subject}`);
   }
+  randomGrade(student) {
+    let grade = Math.floor(Math.random() * 99);
+    console.log(`${student} score ${grade} `);
+    return grade;
+  } // Still working on this solution!
 }
 
 class Student extends Person {
@@ -32,6 +37,7 @@ class Student extends Person {
     this.previousBackground = attributes.previousBackground;
     this.className = attributes.className;
     this.favSubjects = attributes.favSubjects;
+    this.grade = attributes.grade;
   }
   listsSubjects() {
     console.log(...this.favSubjects);
@@ -41,6 +47,13 @@ class Student extends Person {
   }
   sprintChallenge(name, subject) {
     console.log(`${name} has begun sprint challenge on ${subject}`);
+  }
+  graduate() {
+    if (this.grade > 70) {
+      return `Your going to Graduate`;
+    } else {
+      return `Study some more!`;
+    }
   }
 }
 
@@ -81,7 +94,8 @@ const carl = new Student({
   location: 'Philly',
   previousBackground: 'Sys Admin',
   className: 'Webpt7',
-  favSubjects: ['HTML', 'CSS', 'JavaScript']
+  favSubjects: ['HTML', 'CSS', 'JavaScript'],
+  grade: 80
 });
 
 const jacob = new ProjectManagers({
@@ -103,3 +117,7 @@ console.log(carl.PRAssignment('Carl', 'JavaScript IV'));
 console.log(carl.sprintChallenge('Carl', 'JavaScript'));
 console.log(jacob.ProjectManagers('Jacob', 'Webpt7'));
 console.log(jacob.debugsCode('Carl', 'JS'));
+
+// Stretch Goal testing
+console.log(john.randomGrade('Carl'));
+console.log(carl.graduate(80));
