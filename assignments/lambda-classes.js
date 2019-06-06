@@ -26,10 +26,10 @@ class Instructor extends Person {
   }
   randomGrade() {
     let grade = Math.floor(Math.random() * 99);
-    if (this.grade > 50) {
-      return (grade += Math.floor(Math.random() * 99));
+    if (grade > 50) {
+      console.log((grade += Math.floor(Math.random() * 99)));
     } else {
-      return (grade -= Math.floor(Math.random() * 99));
+      console.log((grade -= Math.floor(Math.random() * 99)));
     }
   } // Still working on this solution!
 }
@@ -80,7 +80,7 @@ const fred = new Person({
   age: 37,
   location: 'Bedrock'
 });
-return fred.speak();
+// console.log(fred.speak());
 
 const john = new Instructor({
   name: 'John',
