@@ -7,7 +7,7 @@ class Person {
     this.location = attributes.location;
   }
   speak() {
-    console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 }
 
@@ -19,17 +19,17 @@ class Instructor extends Person {
     this.catchPhrase = attributes.catchPhrase;
   }
   demo(subject) {
-    console.log(`Today we are learning about ${subject}`);
+    return `Today we are learning about ${subject}`;
   }
   grade(student, subject) {
-    console.log(`${student} receives a perfect score on ${subject}`);
+    return `${student} receives a perfect score on ${subject}`;
   }
   randomGrade() {
     let grade = Math.floor(Math.random() * 99);
     if (this.grade > 50) {
-      console.log((grade += Math.floor(Math.random() * 99)));
+      return (grade += Math.floor(Math.random() * 99));
     } else {
-      console.log((grade -= Math.floor(Math.random() * 99)));
+      return (grade -= Math.floor(Math.random() * 99));
     }
   } // Still working on this solution!
 }
@@ -43,13 +43,13 @@ class Student extends Person {
     this.grade = attributes.grade;
   }
   listsSubjects() {
-    console.log(...this.favSubjects);
+    return `...this.favSubjects`;
   }
   PRAssignment(name, subject) {
-    console.log(`${name} has submitted a PR for ${subject}`);
+    return `${name} has submitted a PR for ${subject}`;
   }
   sprintChallenge(name, subject) {
-    console.log(`${name} has begun sprint challenge on ${subject}`);
+    return `${name} has begun sprint challenge on ${subject}`;
   }
   graduate() {
     if (this.grade > 70) {
@@ -67,10 +67,10 @@ class ProjectManagers extends Instructor {
     this.favInstructor = attributes.favInstructor;
   }
   ProjectManagers(name, channel) {
-    console.log(`${name} announces to ${channel}, @channel standy times!​​​​​`);
+    return `${name} announces to ${channel}, @channel standy times!​​​​​`;
   }
   debugsCode(student, subject) {
-    console.log(`${this.name} debugs ${student}'s code on ${subject}`);
+    return `${this.name} debugs ${student}'s code on ${subject}`;
   }
 }
 
@@ -80,7 +80,7 @@ const fred = new Person({
   age: 37,
   location: 'Bedrock'
 });
-console.log(fred.speak());
+return fred.speak();
 
 const john = new Instructor({
   name: 'John',
